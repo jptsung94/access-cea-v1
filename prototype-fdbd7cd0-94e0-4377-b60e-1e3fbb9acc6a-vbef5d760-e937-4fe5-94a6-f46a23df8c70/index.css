@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 13% 9%;
+
+    --muted: 220 13% 46%;
+    --muted-foreground: 220 9% 46%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 9%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+
+    --primary: 210 100% 18%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 13% 96%;
+    --secondary-foreground: 220 13% 9%;
+
+    --accent: 220 13% 96%;
+    --accent-foreground: 220 13% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --ring: 210 100% 18%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 0;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+
+  p {
+    @apply font-normal;
+  }
+}
+
+@layer components {
+  /* Page layout utilities */
+  .page-shell {
+    @apply min-h-screen bg-background;
+  }
+
+  /* Section styling */
+  .section-title {
+    @apply text-lg font-semibold text-foreground mb-2;
+  }
+
+  /* Context panel */
+  .context-panel {
+    @apply p-4 rounded-lg border border-border bg-muted/10;
+  }
+
+  /* Form utilities */
+  .form-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+
+  .field {
+    @apply space-y-2;
+  }
+
+  .help-text {
+    @apply text-sm text-muted-foreground;
+  }
+
+  /* Stepper utilities */
+  .stepper-container {
+    @apply px-6 py-3 border-b border-border bg-muted/5;
+  }
+
+  .stepper-stage {
+    @apply flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-colors;
+  }
+
+  .stepper-stage-active {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .stepper-stage-completed {
+    @apply bg-transparent text-foreground hover:bg-muted/10;
+  }
+
+  .stepper-stage-inactive {
+    @apply bg-transparent text-muted-foreground cursor-not-allowed;
+  }
+
+  .stepper-badge {
+    @apply h-6 w-6 rounded-full flex items-center justify-center text-xs font-semibold;
+  }
+
+  .stepper-chevron {
+    @apply text-muted-foreground;
+  }
+
+  /* Footer utilities */
+  .sticky-footer {
+    @apply flex items-center justify-between px-6 py-4 border-t border-border bg-background sticky bottom-0;
+  }
+
+  /* Divider row */
+  .divider-row {
+    @apply border-t border-border my-6;
+  }
+
+  /* Modal scrollable content */
+  .modal-content-scroll {
+    @apply flex-1 overflow-y-auto;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted/10;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
